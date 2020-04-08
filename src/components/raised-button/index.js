@@ -14,8 +14,8 @@ export default class RaisedButton extends PureComponent {
 
     let {
       disabled,
-      focusAnimation = new Animated.Value(0),
-      disableAnimation = new Animated.Value(disabled? 1 : 0),
+      focusAnimation = new Animated.Value(0, {useNativeDriver: true}),
+      disableAnimation = new Animated.Value(disabled? 1 : 0, {useNativeDriver: true}),
     } = this.props;
 
     this.state = {
@@ -36,11 +36,13 @@ export default class RaisedButton extends PureComponent {
         shadowOpacity: disableAnimation.interpolate({
           inputRange: [0, 1],
           outputRange: [0.30, 0],
+          useNativeDriver: true,
         }),
 
         shadowRadius: animation.interpolate({
           inputRange: [-1, 0, 1],
           outputRange: [0, 2, 4],
+          useNativeDriver: true,
         }),
 
         shadowOffset: {
@@ -49,6 +51,7 @@ export default class RaisedButton extends PureComponent {
           height: animation.interpolate({
             inputRange: [-1, 0, 1],
             outputRange: [0, 1, 2],
+            useNativeDriver: true,
           }),
         },
       },
@@ -57,6 +60,7 @@ export default class RaisedButton extends PureComponent {
         elevation: animation.interpolate({
           inputRange: [-1, 0, 1],
           outputRange: [0, 2, 8],
+          useNativeDriver: true,
         }),
       },
     });
