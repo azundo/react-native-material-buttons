@@ -29,8 +29,6 @@
   },
   "dependencies": {
     "prop-types": "^15.5.9",
-    "react": "^16.13.1",
-    "react-native": "^0.62.1",
     "react-native-material-ripple": "^0.9.1"
   },
   "peerDependencies": {
